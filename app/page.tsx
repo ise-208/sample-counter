@@ -1,5 +1,6 @@
 "use client"
 import {useEffect, useState} from "react";
+import CounterComponent from "@/app/CounterComponent";
 
 
 const initialCount = () => {
@@ -18,7 +19,7 @@ export default function Home() {
     }, []);
     return (
         <div>
-            <h2> カウンター {count}</h2>
+            <CounterComponent count={count} setCount={setCount}/>
         </div>
     );
 }
