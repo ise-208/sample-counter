@@ -1,6 +1,6 @@
 "use client"
 import {useEffect, useState} from "react";
-import CounterComponent from "@/app/CounterComponent";
+import Decrement from "@/component/Decrement";
 
 
 const initialCount = () => {
@@ -11,15 +11,10 @@ const initialCount = () => {
 
 export default function Home() {
     const [count, setCount] = useState(initialCount);
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCount((prevCount) => prevCount + 1);
-        }, 1000);
-        return () => clearInterval(interval);
-    }, []);
+
     return (
         <div>
-            <CounterComponent count={count} setCount={setCount}/>
+            <Decrement count={count} setCount={setCount}/>
         </div>
     );
 }
